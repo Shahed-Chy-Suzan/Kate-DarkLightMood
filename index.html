@@ -20,6 +20,7 @@
         <li><a href="">Services</a></li>
         <li><a href="">Hire Me</a></li>
       </ul>
+      <img src="img/moon.png" id="icon" alt="moon">
     </nav>
 
     <div class="info">
@@ -40,6 +41,39 @@
     </div>
 
   </div>
+
+  <!-- for javascript -->
+  <script>
+    var icon = document.getElementById("icon");
+
+    if(localStorage.getItem("theme") == null){
+      localStorage.setItem("theme", "light");
+    }
+
+    let localData = localStorage.getItem("theme");
+
+    if(localData == "light"){
+      icon.src = "img/moon.png";
+      document.body.classList.remove("dark-theme");
+    }
+    else if(localData == "dark"){
+      icon.src = "img/sun.png";
+      document.body.classList.add("dark-theme");
+    }
+
+    icon.onclick = function(){
+      document.body.classList.toggle("dark-theme");
+      if(document.body.classList.contains("dark-theme")){
+        icon.src = "img/sun.png";
+        localStorage.setItem("theme", "dark");
+      }else{
+        icon.src = "img/moon.png";
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
   
 </body>
 </html>
+
+<!-- tutorial_link: https://www.youtube.com/watch?v=9LZGB3OLXNQ&list=PLjwm_8O3suyO2gdXdWHKgM-mO2Y251zzU&index=9 -->
