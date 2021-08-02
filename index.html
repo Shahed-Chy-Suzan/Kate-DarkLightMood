@@ -10,6 +10,11 @@
 </head>
 
 <body>
+
+  <!--  for Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Start design part -->
   <div class="hero">
     <nav>
       <img src="img/logo.png" class="logo" alt="">
@@ -43,8 +48,10 @@
   </div>
 
   
-  <!-- for javascript -->
+  <!------------------------- javascript code------------------------------>
   <script>
+
+    //---- start for dark-light mood theme --------
     var icon = document.getElementById("icon");
 
     if(localStorage.getItem("theme") == null){
@@ -72,9 +79,25 @@
         localStorage.setItem("theme", "light");
       }
     }
+    //----------- End dark-light mood theme ---------------------
+
+
+    //----------- start Preloader ---------------------
+    var loader = document.getElementById("preloader");
+
+    window.addEventListener("load", function(){
+      loader.style.display = "none";
+    })
+    //----------- End Preloader ---------------------
+
+
   </script>
   
+
 </body>
 </html>
 
-<!-- tutorial_link: https://www.youtube.com/watch?v=9LZGB3OLXNQ&list=PLjwm_8O3suyO2gdXdWHKgM-mO2Y251zzU&index=9 -->
+
+<!-- tutorial_link for theme: https://www.youtube.com/watch?v=9LZGB3OLXNQ&list=PLjwm_8O3suyO2gdXdWHKgM-mO2Y251zzU&index=9 -->
+<!-- tutorial_link for preloader: https://www.youtube.com/watch?v=Yf5d_Zx3AaI -->
+<!-- gif download_link: https://gifimage.net/circle-loader-gif-2/ -->
